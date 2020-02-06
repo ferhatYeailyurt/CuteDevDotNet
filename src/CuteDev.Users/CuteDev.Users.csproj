@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3C1D599-0A89-4778-BB97-0B167E934667}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CuteDev.Users</RootNamespace>
+    <AssemblyName>CuteDev.Users</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\Handler\apiBase.cs" />
+    <Compile Include="API\Handler\apiUsers.cs" />
+    <Compile Include="API\Handler\apiUsersMeta.cs" />
+    <Compile Include="Data\BLL\bllBase.cs" />
+    <Compile Include="Data\BLL\bllPermissions.cs" />
+    <Compile Include="Data\BLL\bllRoles.cs" />
+    <Compile Include="Data\BLL\bllRolesPermissions.cs" />
+    <Compile Include="Data\BLL\bllUsers.cs" />
+    <Compile Include="Data\BLL\bllUsersMeta.cs" />
+    <Compile Include="Data\BLL\bllUsersPermissions.cs" />
+    <Compile Include="Data\BLL\bllUsersRoles.cs" />
+    <Compile Include="Data\BLL\PermissionList.cs" />
+    <Compile Include="Data\DAL\dalBase.cs" />
+    <Compile Include="Data\DAL\dalPermissions.cs" />
+    <Compile Include="Data\DAL\dalRoles.cs" />
+    <Compile Include="Data\DAL\dalUsers.cs" />
+    <Compile Include="Data\DAL\dalUsersMeta.cs" />
+    <Compile Include="Data\DAL\dalUsersPermissions.cs" />
+    <Compile Include="Data\DAL\Model\CuteModel.cs" />
+    <Compile Include="Data\DAL\Model\Permissions.cs" />
+    <Compile Include="Data\DAL\Model\RolePermissions.cs" />
+    <Compile Include="Data\DAL\Model\Roles.cs" />
+    <Compile Include="Data\DAL\Model\Users.cs" />
+    <Compile Include="Data\DAL\Model\UsersMeta.cs" />
+    <Compile Include="Data\DAL\Model\UsersRoles.cs" />
+    <Compile Include="Data\Entity\Roles\pRoles.cs" />
+    <Compile Include="Data\Entity\Roles\rRoles.cs" />
+    <Compile Include="Data\Entity\UsersMeta\pUsersMeta.cs" />
+    <Compile Include="Data\Entity\UsersMeta\rUsersMeta.cs" />
+    <Compile Include="Data\Entity\Users\pUserChangePassword.cs" />
+    <Compile Include="Data\Entity\Users\rUserProfile.cs" />
+    <Compile Include="Data\Entity\Users\pUserProfile.cs" />
+    <Compile Include="Data\Entity\Users\pUserLogin.cs" />
+    <Compile Include="Data\Entity\Users\pUsers.cs" />
+    <Compile Include="Data\Entity\Users\pUsersSignup.cs" />
+    <Compile Include="Data\Entity\Users\rUsers.cs" />
+    <Compile Include="Migrations\201901190640159_InitialDatabase.cs" />
+    <Compile Include="Migrations\201901190640159_InitialDatabase.Designer.cs">
+      <DependentUpon>201901190640159_InitialDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CuteDev.Api\CuteDev.Api.csproj">
+      <Project>{7e379c3b-8345-4a9e-8898-6d6238146607}</Project>
+      <Name>CuteDev.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev.Database\CuteDev.Database.csproj">
+      <Project>{8a64989c-80d4-4f58-b751-84c18078414e}</Project>
+      <Name>CuteDev.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev.Entity\CuteDev.Entity.csproj">
+      <Project>{e31eea9f-67b1-4551-b2a3-fb7a5a87e4e9}</Project>
+      <Name>CuteDev.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev.Log\CuteDev.Log.csproj">
+      <Project>{92934452-045b-4195-ad63-f0454f0a730b}</Project>
+      <Name>CuteDev.Log</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev.Mail\CuteDev.Mail.csproj">
+      <Project>{0b2fd111-552e-4e70-a44d-672dd3ad1bc7}</Project>
+      <Name>CuteDev.Mail</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev.Web\CuteDev.Web.csproj">
+      <Project>{8EA6A581-7ED4-461D-A17D-0D8485AC5C74}</Project>
+      <Name>CuteDev.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CuteDev\CuteDev.csproj">
+      <Project>{56bb6f37-8d57-4139-ac6a-2ae8889a6464}</Project>
+      <Name>CuteDev</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901190640159_InitialDatabase.resx">
+      <DependentUpon>201901190640159_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
